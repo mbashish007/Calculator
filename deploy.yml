@@ -1,0 +1,29 @@
+---
+- name: Pull Docker Image from Docker Hub
+  hosts: localhost
+  remote_user: m_b_ashish
+  become: false
+  tasks:
+
+    - name: Install Python Docker SDK
+      pip:
+        name: docker
+        executable: pip3
+
+    - name: Pull Docker Image
+      docker_image:
+        name: "mbashish/calculator"
+        source: pull
+      register: docker_pull_result
+
+    - name: Display Docker Pull Result
+      debug:
+        var: docker_pull_result
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+
+    - name: Running container
+      shell: docker run -d -p 9998:8081 --name calculator mbashish/calculator
