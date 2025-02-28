@@ -24,6 +24,11 @@
       service:
         name: docker
         state: started
-
+        
+    - name: Remove Existing Docker if exits
+      shell: |
+        docker rm -f calculator || true
+      ignore_errors: yes
+      
     - name: Running container
       shell: docker run -d -p 9998:8081 --name calculator mbashish/calculator
