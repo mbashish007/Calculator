@@ -31,7 +31,7 @@ class ArithmeticServiceTest {
     @Test
     void testSubtraction() {
         double output = arithmeticService.calculateArithmetic(new ArithmeticRequest(10.0, 4.0, "-")).output();
-        assertEquals(6, output);
+        assertEquals(7, output);
     }
 
     @Test
