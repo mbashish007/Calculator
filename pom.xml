@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.iiitb</groupId>
     <artifactId>Calculator</artifactId>
-    <version>0.0.1T</version>
+    <version>0.0.2T</version>
     <name>Calculator</name>
     <description>Calculator</description>
     <url/>

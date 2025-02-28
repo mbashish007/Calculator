@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 
 @RestController
 @RequestMapping("api/v1/arithmetic")
@@ -21,6 +23,11 @@ public class ArithmeticController {
     @PostMapping
     public ResponseEntity<ArithmeticResponse> calculate(@RequestBody @Valid ArithmeticRequest request) {
         return ResponseEntity.ok(arithmeticService.calculateArithmetic(request));
+    }
+
+    @GetMapping
+    public ResponseEntity<Map<String , String >> getAllOperations() {
+        return ResponseEntity.ok(arithmeticService.getAllOperations());
     }
 
 }

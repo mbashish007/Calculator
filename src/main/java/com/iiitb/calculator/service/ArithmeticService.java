@@ -4,6 +4,7 @@ import com.iiitb.calculator.dto.ArithmeticRequest;
 import com.iiitb.calculator.dto.ArithmeticResponse;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.IntStream;
 
@@ -31,5 +32,17 @@ public class ArithmeticService {
         double arg1 = arithmeticRequest.arg1();
         double arg2 = Objects.isNull(arithmeticRequest.arg2()) ? 0 : arithmeticRequest.arg2();
         return new ArithmeticResponse(calculate(arg1, arg2, op));
+    }
+
+    public Map<String, String> getAllOperations() {
+        return Map.of("Addition (arg1 + arg2)", "+",
+                        "Subtraction (arg1 - arg2)", "-",
+                        "Multiplication (arg1 * arg2)", "*",
+                            "Division (arg1 / arg2)", "/",
+                            "square root root(arg1)", "root",
+                            "Natural logarithm (base е) - ln(x)", "e",
+                            "Power Function (arg1^arg2)", "^",
+                            "Factorial (arg1!)", "!"
+                );
     }
 }
