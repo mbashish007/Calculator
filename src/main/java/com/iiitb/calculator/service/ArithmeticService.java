@@ -35,7 +35,7 @@ public class ArithmeticService {
     }
 
     public Map<String, String> getAllOperations() {
-        return Map.of("Addition (arg1 + arg2)", "+",
+        return Map.of("Addition  (arg1 + arg2)", "+",
                         "Subtraction (arg1 - arg2)", "-",
                         "Multiplication (arg1 * arg2)", "*",
                             "Division (arg1 / arg2)", "/",
